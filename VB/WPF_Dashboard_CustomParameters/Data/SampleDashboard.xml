@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Sample Dashboard" />
+  <DataSources>
+    <ExcelDataSource Name="Excel Data Source 1" FileName="|DataDirectory|\Data\Sales.xlsx" ComponentName="dashboardExcelDataSource1">
+      <Options Type="DevExpress.DataAccess.Excel.ExcelSourceOptions" SkipEmptyRows="true" UseFirstRowAsHeader="true" SkipHiddenColumns="true" SkipHiddenRows="true">
+        <ImportSettings Type="DevExpress.DataAccess.Excel.ExcelWorksheetSettings" WorksheetName="Sheet1" />
+      </Options>
+      <Schema>
+        <FieldInfo Name="Category" Type="System.String" Selected="true" />
+        <FieldInfo Name="Product" Type="System.String" Selected="true" />
+        <FieldInfo Name="State" Type="System.String" Selected="true" />
+        <FieldInfo Name="UnitsSoldYTD (Sum)" Type="System.Double" Selected="true" />
+        <FieldInfo Name="UnitsSoldYTDTarget (Sum)" Type="System.Double" Selected="true" />
+        <FieldInfo Name="RevenueQTD (Sum)" Type="System.Double" Selected="true" />
+        <FieldInfo Name="RevenueQTDTarget (Sum)" Type="System.Double" Selected="true" />
+        <FieldInfo Name="RevenueYTD (Sum)" Type="System.Double" Selected="true" />
+        <FieldInfo Name="RevenueYTDTarget (Sum)" Type="System.Double" Selected="true" />
+      </Schema>
+      <ResultSchema>
+        <View>
+          <Field Name="Category" Type="String" />
+          <Field Name="Product" Type="String" />
+          <Field Name="State" Type="String" />
+          <Field Name="UnitsSoldYTD (Sum)" Type="Double" />
+          <Field Name="UnitsSoldYTDTarget (Sum)" Type="Double" />
+          <Field Name="RevenueQTD (Sum)" Type="Double" />
+          <Field Name="RevenueQTDTarget (Sum)" Type="Double" />
+          <Field Name="RevenueYTD (Sum)" Type="Double" />
+          <Field Name="RevenueYTDTarget (Sum)" Type="Double" />
+        </View>
+      </ResultSchema>
+      <Filter>[State] In (?parameterState)</Filter>
+    </ExcelDataSource>
+  </DataSources>
+  <Items>
+    <ChoroplethMap ComponentName="choroplethMapDashboardItem1" Name="Sales by State" DataSource="dashboardExcelDataSource1" ShapefileArea="USA" ShapeTitleAttributeName="ABBREV" AttributeName="NAME">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="State" DefaultId="DataItem0" />
+        <Measure DataMember="RevenueYTD (Sum)" DefaultId="DataItem1" />
+        <Measure DataMember="RevenueYTD (Sum)" DefaultId="DataItem2" />
+        <Measure DataMember="RevenueYTDTarget (Sum)" DefaultId="DataItem3" />
+      </DataItems>
+      <ViewArea TopLatitude="49.369672064487254" BottomLatitude="22.722765208057595" LeftLongitude="-124.70997774915153" RightLongitude="-66.987022055984482" CenterPointLatitude="37.208247632673633" CenterPointLongitude="-95.848499902568008" />
+      <MapLegend />
+      <WeightedLegend />
+      <AttributeDimension DefaultId="DataItem0" />
+      <Maps>
+        <ValueMap Name="Revenue YTD" ValueName="Revenue">
+          <Value DefaultId="DataItem1" />
+          <UniformScale />
+        </ValueMap>
+        <DeltaMap Name="Revenue YTD vs Target" ActualValueName="Revenue" DeltaName="vs Target">
+          <ActualValue DefaultId="DataItem2" />
+          <TargetValue DefaultId="DataItem3" />
+          <AbsoluteVariationNumericFormat />
+          <PercentVariationNumericFormat />
+          <PercentOfTargetNumericFormat />
+        </DeltaMap>
+      </Maps>
+    </ChoroplethMap>
+    <Grid ComponentName="gridDashboardItem1" Name="Product Units Sold" DataSource="dashboardExcelDataSource1">
+      <DataItems>
+        <Dimension DataMember="Product" DefaultId="DataItem0" />
+        <Measure DataMember="UnitsSoldYTD (Sum)" DefaultId="DataItem1" />
+        <Measure DataMember="UnitsSoldYTDTarget (Sum)" DefaultId="DataItem2" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Weight="73.43096234309624">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDeltaColumn Name="UnitsSold YTD vs Target" Weight="76.56903765690376">
+          <ActualValue DefaultId="DataItem1" />
+          <TargetValue DefaultId="DataItem2" />
+        </GridDeltaColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="choroplethMapDashboardItem1" Weight="62.659846547314579" />
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="37.340153452685421" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

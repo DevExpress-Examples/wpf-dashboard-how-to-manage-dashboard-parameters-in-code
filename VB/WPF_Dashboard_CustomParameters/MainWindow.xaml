@@ -1,0 +1,11 @@
+﻿<dx:ThemedWindow x:Class="WPF_Dashboard_CustomParameters.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:local="clr-namespace:WPF_Dashboard_CustomParameters"
+        xmlns:View="clr-namespace:WPF_Dashboard_CustomParameters.Views"
+        Title="MainWindow" Height="628" Width="986">
+    <Grid>
+        <View:MyDashboardView/>
+    </Grid>
+</dx:ThemedWindow>
