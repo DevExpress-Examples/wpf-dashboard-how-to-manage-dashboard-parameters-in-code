@@ -1,4 +1,4 @@
-﻿Imports System
+Imports System
 Imports DevExpress.Mvvm.DataAnnotations
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.POCO
