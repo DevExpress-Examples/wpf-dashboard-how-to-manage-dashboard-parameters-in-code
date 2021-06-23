@@ -1,5 +1,13 @@
-# Dashboard for WPF - How to Manage Dashboard Parameters in Code 
+<!-- default file list -->
+*Files to look at*:
 
+* [MyViewModel.cs](./cs/WPF_Dashboard_CustomParameters/ViewModels/MyViewModel.cs)
+* [MyDashboardView.xaml.cs](./cs/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml.cs)
+* [MyDashboardView.xaml](./cs/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml)
+
+<!-- default file list end -->
+
+# Dashboard for WPF - How to Manage Dashboard Parameters in Code 
 
 This example shows how to override an initial or user-defined <a href="https://docs.devexpress.com/Dashboard/400012/building-the-designer-and-viewer-applications/wpf-viewer/manage-dashboard-parameters">dashboard parameter</a> value by changing it in the <a href="https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters">DashboardControl.CustomParameters</a> event handler. The effective parameter value is hidden from the end-user, and if you set the [DashboardParameter.Visible](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardParameter.Visible) property to false, the parameter itself will also be hidden.
 
