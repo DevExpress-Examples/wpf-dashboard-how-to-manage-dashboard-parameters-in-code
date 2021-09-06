@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,16 +7,17 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B07413A3-5DE2-4B8D-A3D0-467561E5251E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>WPF_Dashboard_CustomParameters</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
-    <TargetFrameworkProfile />
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
+    <BaseIntermediateOutputPath>obj.NetFX</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -59,29 +60,31 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Sparkline.v18.1.Core" />
-    <Reference Include="DevExpress.Dashboard.v18.1.Core" />
-    <Reference Include="DevExpress.Dashboard.v18.1.Wpf" />
-    <Reference Include="DevExpress.DataAccess.v18.1" />
-    <Reference Include="DevExpress.Map.v18.1.Core" />
-    <Reference Include="DevExpress.PivotGrid.v18.1.Core" />
-    <Reference Include="DevExpress.Office.v18.1.Core" />
-    <Reference Include="DevExpress.RichEdit.v18.1.Core" />
-    <Reference Include="DevExpress.Xpf.Charts.v18.1" />
-    <Reference Include="DevExpress.Xpf.Core.v18.1" />
-    <Reference Include="DevExpress.Data.v18.1" />
-    <Reference Include="DevExpress.Printing.v18.1.Core" />
-    <Reference Include="DevExpress.Mvvm.v18.1" />
-    <Reference Include="DevExpress.Xpf.Dashboard.v18.1" />
-    <Reference Include="DevExpress.Xpf.Docking.v18.1" />
-    <Reference Include="DevExpress.Xpf.Gauges.v18.1" />
-    <Reference Include="DevExpress.Xpf.Printing.v18.1" />
-    <Reference Include="DevExpress.Xpf.Grid.v18.1" />
-    <Reference Include="DevExpress.Xpf.Grid.v18.1.Core" />
-    <Reference Include="DevExpress.Xpf.Map.v18.1" />
-    <Reference Include="DevExpress.Xpf.PivotGrid.v18.1" />
-    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v18.1" />
-    <Reference Include="DevExpress.Xpf.TreeMap.v18.1" />
+    <Reference Include="DevExpress.Sparkline.v21.1.Core" />
+    <Reference Include="DevExpress.Dashboard.v21.1.Core" />
+    <Reference Include="DevExpress.Dashboard.v21.1.Wpf" />
+    <Reference Include="DevExpress.DataAccess.v21.1" />
+    <Reference Include="DevExpress.Map.v21.1.Core" />
+    <Reference Include="DevExpress.PivotGrid.v21.1.Core" />
+    <Reference Include="DevExpress.Office.v21.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v21.1.Core" />
+    <Reference Include="DevExpress.Xpf.Charts.v21.1" />
+    <Reference Include="DevExpress.Data.Desktop.v21.1" />
+    <Reference Include="DevExpress.Xpf.Core.v21.1" />
+    <Reference Include="DevExpress.Data.v21.1" />
+    <Reference Include="DevExpress.Printing.v21.1.Core" />
+    <Reference Include="DevExpress.Mvvm.v21.1" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v21.1" />
+    <Reference Include="DevExpress.Xpf.Dashboard.v21.1" />
+    <Reference Include="DevExpress.Xpf.Docking.v21.1" />
+    <Reference Include="DevExpress.Xpf.Gauges.v21.1" />
+    <Reference Include="DevExpress.Xpf.Printing.v21.1" />
+    <Reference Include="DevExpress.Xpf.Grid.v21.1" />
+    <Reference Include="DevExpress.Xpf.Grid.v21.1.Core" />
+    <Reference Include="DevExpress.Xpf.Map.v21.1" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v21.1" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v21.1" />
+    <Reference Include="DevExpress.Xpf.TreeMap.v21.1" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />

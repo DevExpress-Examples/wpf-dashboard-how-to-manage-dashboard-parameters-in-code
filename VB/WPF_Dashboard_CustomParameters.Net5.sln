@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 16
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WPF_Dashboard_CustomParameters", "WPF_Dashboard_CustomParameters\WPF_Dashboard_CustomParameters.vbproj", "{B07413A3-5DE2-4B8D-A3D0-467561E5251E}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WPF_Dashboard_CustomParameters", "WPF_Dashboard_CustomParameters\WPF_Dashboard_CustomParameters.Net5.vbproj", "{B07413A3-5DE2-4B8D-A3D0-467561E5251E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
