@@ -6,21 +6,19 @@
 
 # Dashboard for WPF - How to Manage Dashboard Parameters in Code 
 
-This example shows how to override an initial or user-defined <a href="https://docs.devexpress.com/Dashboard/400012/building-the-designer-and-viewer-applications/wpf-viewer/manage-dashboard-parameters">dashboard parameter</a> value by changing it in the <a href="https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters">DashboardControl.CustomParameters</a> event handler. The effective parameter value is hidden from the end-user, and if you set the [DashboardParameter.Visible](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardParameter.Visible) property to false, the parameter itself will also be hidden.
+This example shows how to change a default or user-defined [dashboard parameter](https://docs.devexpress.com/Dashboard/400012) value by handling the [`DashboardControl.CustomParameters`](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters) event. The effective parameter value is hidden from users. Set the [`Visible`](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardParameter.Visible) property to `false` to hide the parameter from the **Dashboard Parameters** dialog.
 
-To accomplish this task, a parameter named <strong>parameterState</strong> is added to the dashboard. It has a default value and a list of values to show in a look-up editor. A <a href="https://docs.devexpress.com/Dashboard/400012/building-the-designer-and-viewer-applications/wpf-viewer/manage-dashboard-parameters">Dashboard Parameters dialog</a> displays the values and allows the end-user to select a parameter value in the list.<br>However, by handling the <a href="https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters">DashboardControl.CustomParameters</a> event, we can validate the parameter value and ignore the value provided by the end-user. To accomplish this, source data is filtered using a <strong>parameterState </strong>parameter.The value of this parameter is changed at runtime by handling the <a href="https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters">DashboardControl.CustomParameters</a> event which is raised before the dashboard sends a query to a database. Thus, only the value passed in the <a href="https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters">DashboardControl.CustomParameters</a> event is in effect.<br>
+In this example, the **parameterState** dashboard parameter whit static look-up settings is added to the dashboard. This dashboard parameter is used to filter the data source. The [**Dashboard Parameters**](https://docs.devexpress.com/Dashboard/400012) displays the values and enables users to select a parameter value from the list. In the [`DashboardControl.CustomParameters`](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters) event handler, we can change the value provided by the user before it is passed to the query.
+In the result, the value defined in the `DashboardControl.CustomParameters` event is in effect.
 
-![](./images/wpf-dashboard-how-to-manage-dashboard-parameters-in-code.png)
+![Dashboard Parameter Dialog](./images/wpf-dashboard-how-to-manage-dashboard-parameters-in-code.png)
 
-<!-- default file list -->
-## Files to look at
+## Files to Review
 
-* [MyViewModel.cs](./cs/WPF_Dashboard_CustomParameters/ViewModels/MyViewModel.cs)
-* [MyDashboardView.xaml.cs](./cs/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml.cs)
-* [MyDashboardView.xaml](./cs/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml)
-<!-- default file list end -->
+* [MyViewModel.cs](./cs/WPF_Dashboard_CustomParameters/ViewModels/MyViewModel.cs) (VB: [MyViewModel.vb](./VB/WPF_Dashboard_CustomParameters/ViewModels/MyViewModel.vb))
+* [MyDashboardView.xaml.cs](./cs/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml.cs) (VB: [MyDashboardView.xaml.vb](./VB/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml.vb))
+* [MyDashboardView.xaml](./cs/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml) (VB: [MyDashboardView.xaml](./VB/WPF_Dashboard_CustomParameters/Views/MyDashboardView.xaml))
 
 ## Documentation
 
-- [Manage Dashboard Parameters](https://docs.devexpress.com/Dashboard/400012/wpf-viewer/manage-dashboard-parameters)
-- [DashboardControl.CustomParameters](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControl.CustomParameters)
+- [Specify Dashboard Parameter Values](https://docs.devexpress.com/Dashboard/400012/wpf-viewer/manage-dashboard-parameters)
