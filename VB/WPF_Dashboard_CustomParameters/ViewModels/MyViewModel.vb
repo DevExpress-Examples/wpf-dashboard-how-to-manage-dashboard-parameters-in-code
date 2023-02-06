@@ -30,7 +30,7 @@ Namespace WPF_Dashboard_CustomParameters.ViewModels
             ' Default parameter value.
             myDashboardParameter.Value = New List(Of String) From {"Ohio", "Utah"}
             Return myDashboardParameter
-        End Sub
+		End Function
         Public Sub OnCustomParameters(ByVal e As DevExpress.DashboardCommon.CustomParametersEventArgs)
             Dim customParameter = e.Parameters.FirstOrDefault(Function(p) p.Name = "parameterState")
             If customParameter IsNot Nothing Then
