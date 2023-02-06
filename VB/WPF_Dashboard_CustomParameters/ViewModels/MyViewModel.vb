@@ -11,18 +11,14 @@ Namespace WPF_Dashboard_CustomParameters.ViewModels
     Public Class MyViewModel
         Protected Sub New()
             'Dashboard = new SampleDashboard(); 
-
             Dim dashboard_Renamed As New Dashboard()
             dashboard_Renamed.LoadFromXml("Data\SampleDashboard.xml")
-            AddParameter(dashboard_Renamed)
-            ModifyFilter(dashboard_Renamed)
+            dashboard_Renamed.Parameters.Add(reateParameter())
+            dashboard_Renamed.DataSources(0).Filter = "[State] In (?parameterState)"
             Dashboard = dashboard_Renamed
         End Sub
         Public Overridable Property Dashboard() As DevExpress.DashboardCommon.Dashboard
-        Private Sub ModifyFilter(ByVal dashboard As Dashboard)
-            dashboard.DataSources(0).Filter = "[State] In (?parameterState)"
-        End Sub
-        Private Sub AddParameter(ByVal dashboard As Dashboard)
+        Private Function CreateParameter() As DashboardParameter
             Dim myDashboardParameter As New DashboardParameter()
             Dim staticListLookUpSettings1 As New StaticListLookUpSettings()
             myDashboardParameter.AllowMultiselect = True
@@ -33,7 +29,7 @@ Namespace WPF_Dashboard_CustomParameters.ViewModels
             myDashboardParameter.Type = GetType(String)
             ' Default parameter value.
             myDashboardParameter.Value = New List(Of String) From {"Ohio", "Utah"}
-            dashboard.Parameters.Add(myDashboardParameter)
+            Return myDashboardParameter
         End Sub
         Public Sub OnCustomParameters(ByVal e As DevExpress.DashboardCommon.CustomParametersEventArgs)
             Dim customParameter = e.Parameters.FirstOrDefault(Function(p) p.Name = "parameterState")
