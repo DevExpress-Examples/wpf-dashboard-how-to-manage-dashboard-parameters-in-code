@@ -13,7 +13,7 @@ Namespace WPF_Dashboard_CustomParameters.ViewModels
             'Dashboard = new SampleDashboard(); 
             Dim dashboard_Renamed As New Dashboard()
             dashboard_Renamed.LoadFromXml("Data\SampleDashboard.xml")
-            dashboard_Renamed.Parameters.Add(reateParameter())
+            dashboard_Renamed.Parameters.Add(CreateParameter())
             dashboard_Renamed.DataSources(0).Filter = "[State] In (?parameterState)"
             Dashboard = dashboard_Renamed
         End Sub
